@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SickBeats Music Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color:black;
+        }
+
+        #homeContainer {
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 100vh;
+        }
+
+        #leftContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: -75px;
+        }
+
+        #leftContainer img{
+            border-radius: 50%;
+        }
+
+        #buttonContainer {
+            display: flex;
+        }
+
+        .buttons {
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+            width: max-content;
+            margin: 0px 20px;
+            border: 2px solid rgb(36, 238, 238);
+        }
+
+        .buttons:active {
+            border-color: rgb(0, 190, 190) !important;
+            background-color: rgb(0, 190, 190) !important;
+            color: black !important;
+        }
+
+        #addMusic{
+            color: rgb(36, 238, 238);
+            background-color: none;
+        }
+
+        #addMusic input {
+            display: none;
+        }
+
+        #addMusic label {
+            cursor: pointer;
+        }
+
+        #continue{
+            background-color: rgb(36, 238, 238);
+        }
+
+        #rightContainer {
+            width: 500px;
+            min-width: 500px;
+            height: 600px;
+            /* color: #222428;
+            border: 3px solid #222428; */
+            color: #ffbd59;
+            border: 1px solid #ffbd59;
+            border-radius: 15px;
+            margin: 50px;
+            font-size: 50px;
+        }
+
+        #noSongs{
+            text-align: center;
+            line-height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="homeContainer">
+        <div id="leftContainer">
+            <img src="logo.png" alt="SickBeats">
+            <div id="buttonContainer">
+                <div class="buttons" id="addMusic">
+                    <label for="songs-input">
+                        Add songs +
+                    </label>
+                    <input type="file" id="songs-input" accept=".mp3, .wav, .m4a" multiple>
+                </div>
+                <div class="buttons" id="continue">Continue</div>
+            </div>
+        </div>
+        <div id="rightContainer">
+            <div id="songsList"></div>
+            <div id="noSongs">No songs added.</div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
